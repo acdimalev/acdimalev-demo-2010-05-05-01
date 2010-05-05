@@ -6,6 +6,20 @@
 
 #define SCALE ( (WIDTH < HEIGHT ? WIDTH : HEIGHT) / (3/2.0) )
 
+void h_guide(cairo_t *cr, float y) {
+  cairo_move_to(cr, -3/4.0, y);
+  cairo_line_to(cr,  3/4.0, y);
+  cairo_set_line_width(cr, 1/128.0);
+  cairo_stroke(cr);
+}
+
+void v_guide(cairo_t *cr, float x) {
+  cairo_move_to(cr, x, -3/4.0);
+  cairo_line_to(cr, x,  3/4.0);
+  cairo_set_line_width(cr, 1/128.0);
+  cairo_stroke(cr);
+}
+
 int main(int argc, char **argv) {
   SDL_Surface *sdl_surface;
   cairo_t *cr;
