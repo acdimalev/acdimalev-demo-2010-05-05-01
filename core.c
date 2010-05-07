@@ -20,6 +20,11 @@ void v_guide(cairo_t *cr, float x) {
   cairo_stroke(cr);
 }
 
+void bullet(cairo_t *cr, float x, float y) {
+  cairo_arc(cr, x, y, 1/32.0, 0, 2*M_PI);
+  cairo_fill(cr);
+}
+
 int main(int argc, char **argv) {
   SDL_Surface *sdl_surface;
   cairo_t *cr;
